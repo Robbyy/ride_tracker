@@ -2,6 +2,7 @@ package com.pluralsight.controller;
 
 import java.util.List;
 
+import org.junit.Test;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -9,12 +10,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.pluralsight.model.Ride;
 
-import org.junit.Test;
-
-public class RestControllerTest {
+public class RestControllerTest 
+{
 
 	@Test(timeout=3000)
-	public void testGetRides() {
+	public void testGetRides() 
+	{
 		RestTemplate restTemplate = new RestTemplate();
 
 		ResponseEntity<List<Ride>> ridesResponse = restTemplate.exchange(
@@ -23,7 +24,8 @@ public class RestControllerTest {
 				});
 		List<Ride> rides = ridesResponse.getBody();
 
-		for (Ride ride : rides) {
+		for (Ride ride : rides) 
+		{
 			System.out.println("Ride name: " + ride.getName());
 		}
 	}
