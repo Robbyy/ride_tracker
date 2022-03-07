@@ -22,7 +22,12 @@ public class RestControllerTest
 		ride.setName("Bobsled Trail Ride");
 		ride.setDuration(35);
 		
-		restTemplate.put("http://localhost:8080/ride_tracker/ride", ride);	
+//		restTemplate.put("http://localhost:8080/ride_tracker/ride", ride);
+	
+		ride = restTemplate.postForObject("http://localhost:8080/ride_tracker/ride", ride, Ride.class);
+		
+		
+		System.out.println("Ride: " + ride);
 	}
 	
 	@Test(timeout=3000)
