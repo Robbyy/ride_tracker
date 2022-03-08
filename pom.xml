@@ -9,6 +9,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ride_tracker Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>5.2.7.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>	
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
